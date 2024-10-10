@@ -1,0 +1,99 @@
+#include <stdio.h>
+
+void deposit (double *account,double amount);
+void withdraw(double *account,double amount);
+void check_balance (double account);
+int main() {
+
+double account1 = 0.0,
+account2 = 0.0, account3 = 0.0;
+int choice, account_choice;
+double amount;
+
+while (1) {
+
+printf("\nBanking System Menu: \n");
+printf("1. Deposit\n");
+printf("2. Withdraw\n");
+printf("3. Check Balance\n");
+printf("4. Exit\n");
+printf("Enter yourchoice: ");
+scanf("%d", &choice);
+if (choice == 4) {
+printf("Thank you for using the banking system.Goodbye!\n");
+break;
+}
+
+printf("\nSelect Account: \n");
+printf("1. Account 1\n");
+printf("2. Account 2\n");
+printf("3. Account 3\n");
+printf("Enter account number: ");
+scanf("%d",  &account_choice);
+double
+*selected_account;
+{
+switch (account_choice)
+case 1:
+selected_account = &account1;
+break;
+case 2:
+selected_account = &account2;
+break;
+case 3:
+selected account = &account3;
+break;
+default:
+
+printf("Invalid account number. \n");
+continue;
+}
+switch (choice) {
+case 1: // Deposit
+printf("Enter amount to deposit: ");
+scanf("%1f",&amount);
+deposit(selected_account,amount);
+
+break;
+case 2: // Withdraw
+printf("Enter
+amount to withdraw: ");
+&amount);
+scanf("%lf", withdraw(selected_account,amount);
+break;
+case 3: // Check balance
+check balance(*selected_account);
+break;
+
+default:
+printf("Invalid choice. Please try again. \n");
+}
+
+}
+return 0;
+}
+
+void deposit(double *account,double amount) {
+if (amount > 0) {
+if account += amount;
+printf("Depositsuccessful. New balance: $ %.2f\n", *account);
+} else {
+printf("Invalid amount.Please enter a positive value.\n");
+}
+
+}
+void withdraw(double *account,double amount) {
+if (amount > 0 && *account >= amount) {
+*account = amount;
+printf("Withdrawal successful. New balance: $ %.2f\n", account);
+} else if (*account <amount) {
+printf("Insufficient funds. Withdrawal failed.\n");
+} else {
+printf("Invalid amount. Please enter a positive value.\n");
+}
+}
+
+void check_balance (double
+account) {
+printf("Current balance: %.2f\n", account);
+}
